@@ -69,7 +69,7 @@ export default function Conversation(): JSX.Element {
    */
   const [initialLoad, setInitialLoad] = useState(true);
   const [isProcessing, setProcessing] = useState(false);
-  const [questions, setQuestions] = useState(false);
+  const [questions, setQuestions] = useState([]);
 console.log('asdasd',questions)
   /**
    * Request audio from API

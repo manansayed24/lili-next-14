@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
     await fs.promises.writeFile(filePath, JSON.stringify(updatedData, null, 2));
 
     return NextResponse.json({ message: 'File updated successfully' });
-  } catch (err) {
+  } catch (err: any) {
     console.error('Error:', err);
     return NextResponse.json({ error: err.message }, { status: 500 });
   }

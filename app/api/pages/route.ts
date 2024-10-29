@@ -124,10 +124,10 @@ export  async function POST(
 
   const { prompt } =await req.json();
 
-  if (!prompt) {
-    res.status(400).json({ message: 'Prompt is required' });
-    return;
-  }
+//   if (!prompt) {
+//     res.status(400).json({ message: 'Prompt is required' });
+//     return;
+//   }
 
   try {
     console.log('Sending request to OpenAI API with prompt:', prompt);
@@ -139,7 +139,7 @@ export  async function POST(
 
     // const message = response.data.choices[0].message?.content || 'No response';
     console.log('Received response from OpenAI API:', response.choices[0].message.content);
-    const fixedStr = response.choices[0].message.content
+    const fixedStr = response.choices[0].message.content||'str'
   .replace(/'/g, '"') // Replace single quotes with double quotes
   .replace(/(\w+):/g, '"$1":') // Add double quotes around keys
   .replace(/,(\s*})/g, '$1'); // Remove trailing commas before closing braces
