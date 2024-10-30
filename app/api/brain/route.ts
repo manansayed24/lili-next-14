@@ -60,7 +60,7 @@ export async function POST(req: Request) {
       stream: true,
       messages:[
         // { role: 'system', content: `you are a interviewer who asks questions for a ${occupation} having 3 years of experience` },
-        { role: 'system', content: `Act as interviewer who asks questions for a occupation of ${occupation?.job_title} having ${occupation?.years_expriance} years of experience /n ask only 4 qustions thne say  interview is finshed close this browser tab /n don't after this repete this again` },
+        { role: 'system', content: `Act as interviewer who asks questions for a occupation of ${occupation?.job_title} having ${occupation?.years_expriance} years of experience /n always wait for response /n ask only 4 qustions thne say  interview is finshed close this browser tab /n don't after this repete this again` },
         ...messages,
         // { role: 'user', content: prompt }
       ],
