@@ -19,7 +19,10 @@ const nextConfig = {
       test: /\.svg$/,
       use: ["@svgr/webpack"],
     });
-
+ env: {
+    OPENAI_API_KEY: process.env.OPENAI_API_KEY,
+    DEEPGRAM_API_KEY: process.env.DEEPGRAM_API_KEY,
+  },
     config.resolve.alias = {
       ...config.resolve.alias,
       sharp$: false,
